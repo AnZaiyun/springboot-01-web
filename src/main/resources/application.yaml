@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: MYJAVA
+    password: 1234
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+    driver-class-name: oracle.jdbc.OracleDriver
