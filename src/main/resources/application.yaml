@@ -4,6 +4,10 @@ spring:
     password: 1234
     url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
     driver-class-name: oracle.jdbc.OracleDriver
+  #禁用模板引擎缓存
+  groovy:
+    template:
+      cache: false
 
 server:
   port: 8088
