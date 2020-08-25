@@ -1,18 +1,20 @@
 package com.anzaiyun.controller.Login;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping({"","/index"})
+@RequestMapping({"/login"})
 public class LoginController {
 
+    private Logger logger = Logger.getLogger(LoginController.class);
+
     @RequestMapping("")
-    public String login(@RequestParam("password") String password, @RequestParam("username") String username,
-                        Model model){
-        System.out.println("password:"+password+" username:"+username);
+    public String login(Model model){
+        logger.info("登录页面展示");
         return "login.html";
     }
 }
