@@ -14,7 +14,6 @@ public class LoginController {
 
     @RequestMapping("")
     public String login(Model model){
-        logger.info("登录页面展示");
         return "login.html";
     }
 }
