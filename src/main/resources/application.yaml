@@ -8,11 +8,11 @@ spring:
   groovy:
     template:
       cache: false
-  #Spring Security安全管理控制
-  security:
-    user:
-      name: an
-      password: 123
+
+logging:
+  level:
+    root: info
+
 
 server:
   port: 8088

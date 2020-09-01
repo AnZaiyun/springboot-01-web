@@ -20,15 +20,12 @@ public class IndexController {
                         @RequestParam(value = "username",required = false) String username,
                         Model model, HttpSession session){
 
+        logger.info("欢迎页面  用户：["+username+"] 密码：["+password+"]");
 
-//        模拟登录校验
-        if ("123".equals(username)){
-            logger.info("用户："+username+"    登录成功,主页面展示");
-            session.setAttribute("username",username);
-            return "index.html";
-        }else{
-            return "redirect:/login";
-        }
+        session.setAttribute("username",username);
+        session.setAttribute("password",password);
+
+        return "index.html";
 
     }
 }
