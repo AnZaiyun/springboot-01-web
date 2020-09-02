@@ -1,6 +1,8 @@
 package com.anzaiyun.controller.MainPage;
 
 import org.apache.log4j.Logger;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,14 +18,15 @@ public class IndexController {
 
 
     @RequestMapping("/index")
-    public String index(@RequestParam(value = "password",required = false) String password,
-                        @RequestParam(value = "username",required = false) String username,
+    public String index(Authentication auth,
                         Model model, HttpSession session){
 
-        logger.info("欢迎页面  用户：["+username+"] 密码：["+password+"]");
+        User user  = (User) auth.getPrincipal();
+        String username = user.getUsername() ;
+        String password = (String) auth.getCredentials();
+        String authority = auth.getAuthorities().toString();
+        logger.info("欢迎页面  用户：["+username+"]  密码：["+password+"]"+"  权限：["+authority+"]");
 
-        session.setAttribute("username",username);
-        session.setAttribute("password",password);
 
         return "index.html";
 

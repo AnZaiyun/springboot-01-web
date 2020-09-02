@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //loginPage是登录页面的解析地址
                 .formLogin().loginPage("/login")
                 //loginProcessingUrl是登录表单的提交地址
-                            .loginProcessingUrl("/Main/index").defaultSuccessUrl("/Main/index?username=2&password=2")
+                            .loginProcessingUrl("/Main/index").defaultSuccessUrl("/Main/index")
                 .and()
                 .csrf().disable();
     }
