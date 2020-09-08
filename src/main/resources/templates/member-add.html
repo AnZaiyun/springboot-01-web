@@ -1,17 +1,17 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>后台登录-X-admin1.1</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/font.css">
-	<link rel="stylesheet" href="css/xadmin.css">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/css/font.css}">
+	<link rel="stylesheet" th:href="@{/css/xadmin.css}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-    <script src="lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/xadmin.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/xadmin.js}"></script>
 
 </head>
 <body>
@@ -21,7 +21,7 @@
         <div class="page-content">
           <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form">
+            <form class="layui-form" action="/Main/Add">
                 <div class="layui-form-item">
                     <label for="L_email" class="layui-form-label">
                         <span class="x-red">*</span>邮箱
@@ -31,7 +31,7 @@
                         autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>将会成为您唯一的登入名
+                        <span class="x-red">*</span>重置用户信息使用
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -44,32 +44,29 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="L_pass" class="layui-form-label">
-                        <span class="x-red">*</span>密码
+                    <label for="l_tel" class="layui-form-label">
+                        <span class="x-red">*</span>电话
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                        <input type="text" id="l_tel" name="tel" required="" lay-verify="l_tel"
                         autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
-                        6到16个字符
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="L_repass" class="layui-form-label">
-                        <span class="x-red">*</span>确认密码
+                    <label for="L_email" class="layui-form-label">
                     </label>
-                    <div class="layui-input-inline">
-                        <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
-                        autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_repass" class="layui-form-label">
-                    </label>
-                    <button  class="layui-btn" lay-filter="add" lay-submit="">
+                    <button  class="layui-btn" lay-filter="add" lay-submit="/Main/Add">
                         增加
                     </button>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_email" class="layui-form-label">
+                    </label>
+                    <label for="L_email" class="layui-form-label" th:text="${msg}">
+
+                    </label>
                 </div>
             </form>
             <!-- 右侧内容框架，更改从这里结束 -->

@@ -15,4 +15,16 @@
         from TUSER t where t.l_id = #{id}
     </select>
 
+    <select id="FindByName" resultType="com.anzaiyun.dao.UserDao">
+        select t.l_id, t.vc_name, t.l_sex, t.l_tel, t.vc_mail,
+               t.vc_address, t.d_jrsj, t.l_state
+        from TUSER t where t.vc_name = #{vc_name}
+    </select>
+
+    <select id="InsertUser" parameterType="com.anzaiyun.dao.UserDao">
+         insert into TUSER (L_ID, vc_name,L_SEX, l_tel, vc_mail,D_JRSJ)
+	     select seq_tuser_id.nextval, #{vc_name},1,#{l_tel},#{vc_mail},sysdate
+	     from dual
+    </select>
+
 </mapper>

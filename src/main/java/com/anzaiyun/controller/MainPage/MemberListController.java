@@ -26,8 +26,6 @@ public class MemberListController {
 
         logger.info("会员列表页面  用户：["+username+"] 密码：["+password+"]");
 
-        System.out.println(userService.FindById(1).toString());
-
         return "member-list.html";
     }
 }

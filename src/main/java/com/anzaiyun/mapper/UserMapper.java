@@ -7,4 +7,9 @@ import org.springframework.stereotype.Repository;
 public interface UserMapper {
 
     public UserDao FindById(int id);
+
+    public UserDao FindByName(String vc_name);
+
+    public String InsertUser(UserDao userDao);
+
 }

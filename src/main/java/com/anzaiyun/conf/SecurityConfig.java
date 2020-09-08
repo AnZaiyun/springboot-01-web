@@ -15,14 +15,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/Main/index").hasRole("user")
-                .antMatchers("/Main/MemberList").hasRole("admin")
+                .antMatchers("/Main/MemberList").hasRole("admin_find")
+                .antMatchers("/Main/MemberAdd").hasRole("admin_add")
                 .and()
                 //loginPage是登录页面的解析地址
                 .formLogin().loginPage("/login")
                 //loginProcessingUrl是登录表单的提交地址
                             .loginProcessingUrl("/Main/index").defaultSuccessUrl("/Main/index")
                 .and()
-                .csrf().disable();
+                .csrf().disable()
+                //允许iframe frame加载同源的资源
+                .headers().frameOptions().sameOrigin();
     }
 
     @Override
@@ -30,11 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("1").password(new BCryptPasswordEncoder().encode("1")).roles("user")
                 .and()
-                .withUser("2").password(new BCryptPasswordEncoder().encode("2")).roles("user","admin");
+                .withUser("2").password(new BCryptPasswordEncoder().encode("2")).roles("user","admin_find")
+                .and()
+                .withUser("3").password(new BCryptPasswordEncoder().encode("3")).roles("user","admin_find","admin_add");
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**","/fonts/**","/images/**","/js/**","/lib.layui/**");
+        web.ignoring().antMatchers("/css/**","/fonts/**","/images/**","/js/**","/lib/**");
     }
 }

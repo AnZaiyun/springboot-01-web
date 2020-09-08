@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         Enumeration<String> names = request.getSession().getAttributeNames();
         while (names.hasMoreElements()){
             String tmp = names.nextElement();
-            System.out.println(tmp);
+//            System.out.println(tmp);
         }
         //登录成功后，与用户相关的信息全部封装到session的SPRING_SECURITY_CONTEXT属性中，然后登录成功跳转是重定向，request参数会丢失
         //1、通过session获取SecurityContext对象
@@ -36,16 +36,16 @@ public class LoginInterceptor implements HandlerInterceptor {
             //未登录时改session对象不存在
             auth = context_session.getAuthentication();
             username = auth.getName();
-            System.out.println("security封装后的name："+username);
+//            System.out.println("security封装后的name："+username);
         }
 
         //2、通过SecurityContextHolder获得当前线程上绑定的SecurityContext对象
         SecurityContext context = SecurityContextHolder.getContext();
         auth = context.getAuthentication();
         username = auth.getName();
-        System.out.println("security封装后的name(通过SecurityContextHolder获取)："+username);
+//        System.out.println("security封装后的name(通过SecurityContextHolder获取)："+username);
         //获取用户的权限字
-        System.out.println(auth.getAuthorities().toString());
+//        System.out.println(auth.getAuthorities().toString());
 
         logger.info("开始校验用户："+username);
 

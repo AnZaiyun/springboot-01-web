@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-    <script th:src="@{lib/layui/layui.js}" charset="utf-8"></script>
-    <script type="text/javascript" src="js/xadmin.js"></script>
+    <script th:src="@{/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/xadmin.js}"></script>
 
 </head>
 <body>
@@ -224,7 +224,7 @@
             </form>
             <xblock>
                 <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加用户','member-add.html','600','500')"><i class="layui-icon">&#xe608;</i>添加</button>
+                <button class="layui-btn" onclick="member_add('添加用户','/Main/MemberAdd','600','500')"><i class="layui-icon">&#xe608;</i>添加</button>
                 <span class="x-right" style="line-height:40px">共有数据：88 条</span>
             </xblock>
             <table class="layui-table">
@@ -380,17 +380,17 @@
     <div class="bg-changer">
         <div class="swiper-container changer-list">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="images/a.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/b.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/c.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/d.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/e.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/f.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/g.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/h.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/i.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/j.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="images/k.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/a.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/b.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/c.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/d.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/e.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/f.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/g.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/h.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/i.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/j.jpg}" alt=""></div>
+                <div class="swiper-slide"><img class="item" th:src="@{/images/k.jpg}" alt=""></div>
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>
@@ -450,6 +450,7 @@
         function member_add(title,url,w,h){
             x_admin_show(title,url,w,h);
         }
+
         /*用户-查看*/
         function member_show(title,url,id,w,h){
             x_admin_show(title,url,w,h);

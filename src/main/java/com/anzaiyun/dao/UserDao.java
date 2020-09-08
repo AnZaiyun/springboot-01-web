@@ -3,96 +3,101 @@ package com.anzaiyun.dao;
 import com.anzaiyun.util.ChineseNamesAnno;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 @ToString
 public class UserDao {
     @ChineseNamesAnno(ChineseName = "唯一标识符")
-    private int L_ID;
+    private int l_id;
 
     @ChineseNamesAnno(ChineseName = "用户名")
-    private String VC_NAME;
+    private String vc_name;
 
     @ChineseNamesAnno(ChineseName = "性别（1：男；2：女）")
-    private int L_SEX;
+    private int l_sex;
 
     @ChineseNamesAnno(ChineseName = "电话")
-    private String L_TEL;
+    private String l_tel;
 
     @ChineseNamesAnno(ChineseName = "邮箱")
-    private String VC_MAIL;
+    private String vc_mail;
 
     @ChineseNamesAnno(ChineseName = "地址")
-    private String VC_ADDRESS;
+    private String vc_address;
 
     @ChineseNamesAnno(ChineseName = "时间")
-    private Date D_JRSJ;
+    private Date d_jrsj;
 
     @ChineseNamesAnno(ChineseName = "状态")
-    private int L_STATE;
+    private int l_state;
 
-    public int getL_ID() {
-        return L_ID;
+    public UserDao(String vc_name, String l_TEL, String VC_MAIL) {
+        this.vc_name = vc_name;
+        l_tel = l_TEL;
+        this.vc_mail = VC_MAIL;
     }
 
-    public void setL_ID(int l_ID) {
-        L_ID = l_ID;
+    public int getL_id() {
+        return l_id;
     }
 
-    public String getVC_NAME() {
-        return VC_NAME;
+    public void setL_id(int l_id) {
+        this.l_id = l_id;
     }
 
-    public void setVC_NAME(String VC_NAME) {
-        this.VC_NAME = VC_NAME;
+    public String getVc_name() {
+        return vc_name;
     }
 
-    public int getL_SEX() {
-        return L_SEX;
+    public void setVc_name(String vc_name) {
+        this.vc_name = vc_name;
     }
 
-    public void setL_SEX(int l_SEX) {
-        L_SEX = l_SEX;
+    public int getL_sex() {
+        return l_sex;
     }
 
-    public String getL_TEL() {
-        return L_TEL;
+    public void setL_sex(int l_sex) {
+        this.l_sex = l_sex;
     }
 
-    public void setL_TEL(String l_TEL) {
-        L_TEL = l_TEL;
+    public String getL_tel() {
+        return l_tel;
     }
 
-    public String getVC_MAIL() {
-        return VC_MAIL;
+    public void setL_tel(String l_tel) {
+        this.l_tel = l_tel;
     }
 
-    public void setVC_MAIL(String VC_MAIL) {
-        this.VC_MAIL = VC_MAIL;
+    public String getVc_mail() {
+        return vc_mail;
     }
 
-    public String getVC_ADDRESS() {
-        return VC_ADDRESS;
+    public void setVc_mail(String vc_mail) {
+        this.vc_mail = vc_mail;
     }
 
-    public void setVC_ADDRESS(String VC_ADDRESS) {
-        this.VC_ADDRESS = VC_ADDRESS;
+    public String getVc_address() {
+        return vc_address;
     }
 
-    public Date getD_JRSJ() {
-        return D_JRSJ;
+    public void setVc_address(String vc_address) {
+        this.vc_address = vc_address;
     }
 
-    public void setD_JRSJ(Date d_JRSJ) {
-        D_JRSJ = d_JRSJ;
+    public Date getD_jrsj() {
+        return d_jrsj;
     }
 
-    public int getL_STATE() {
-        return L_STATE;
+    public void setD_jrsj(Date d_jrsj) {
+        this.d_jrsj = d_jrsj;
     }
 
-    public void setL_STATE(int l_STATE) {
-        L_STATE = l_STATE;
+    public int getL_state() {
+        return l_state;
+    }
+
+    public void setL_state(int l_state) {
+        this.l_state = l_state;
     }
 }
