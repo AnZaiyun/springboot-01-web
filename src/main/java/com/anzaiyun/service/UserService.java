@@ -18,6 +18,11 @@ public class UserService {
         return userMapper.FindByName(vc_name);
     }
 
+    public UserDao[] FindUser(){
+        return userMapper.FindUser();
+    }
+
+
     public Boolean AddUser(UserDao userDao){
         if (userMapper.FindByName(userDao.getVc_name()) != null)
             return false;

@@ -25,7 +25,7 @@ public class IndexController {
         String username = user.getUsername() ;
         String password = (String) auth.getCredentials();
         String authority = auth.getAuthorities().toString();
-        logger.info("欢迎页面  用户：["+username+"]  密码：["+password+"]"+"  权限：["+authority+"]");
+        logger.debug("欢迎页面  用户：["+username+"]  密码：["+password+"]"+"  权限：["+authority+"]");
 
 
         return "index.html";

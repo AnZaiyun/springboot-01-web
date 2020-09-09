@@ -10,6 +10,8 @@ public interface UserMapper {
 
     public UserDao FindByName(String vc_name);
 
+    public UserDao[] FindUser();
+
     public String InsertUser(UserDao userDao);
 
 }

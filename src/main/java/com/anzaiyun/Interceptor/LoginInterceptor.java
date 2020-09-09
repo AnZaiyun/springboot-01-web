@@ -47,10 +47,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         //获取用户的权限字
 //        System.out.println(auth.getAuthorities().toString());
 
-        logger.info("开始校验用户："+username);
+        logger.debug("开始校验用户："+username);
 
         if (username == null || "".equals(username) || "anonymousUser".equals(username)){
-            logger.info("登录状态已失效，请重新登录");
+            logger.debug("登录状态已失效，请重新登录");
             request.setAttribute("errormsg","登录状态已失效，请重新登录");
             //请求转发
             response.sendRedirect("/login");

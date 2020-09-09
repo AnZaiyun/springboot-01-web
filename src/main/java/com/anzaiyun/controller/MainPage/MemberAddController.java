@@ -39,7 +39,7 @@ public class MemberAddController {
 
         }
 
-        logger.info("增加会员页面  用户：["+username+"]"+"  权限：["+userauth+"]");
+        logger.debug("增加会员页面  用户：["+username+"]"+"  权限：["+userauth+"]");
         return "member-add.html";
     }
 

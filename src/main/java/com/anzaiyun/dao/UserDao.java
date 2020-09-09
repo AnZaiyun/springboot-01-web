@@ -31,10 +31,24 @@ public class UserDao {
     @ChineseNamesAnno(ChineseName = "状态")
     private int l_state;
 
+    public UserDao() {
+    }
+
     public UserDao(String vc_name, String l_TEL, String VC_MAIL) {
         this.vc_name = vc_name;
         l_tel = l_TEL;
         this.vc_mail = VC_MAIL;
+    }
+
+    public UserDao(int l_id, String vc_name, int l_sex, String l_tel, String vc_mail, String vc_address, Date d_jrsj, int l_state) {
+        this.l_id = l_id;
+        this.vc_name = vc_name;
+        this.l_sex = l_sex;
+        this.l_tel = l_tel;
+        this.vc_mail = vc_mail;
+        this.vc_address = vc_address;
+        this.d_jrsj = d_jrsj;
+        this.l_state = l_state;
     }
 
     public int getL_id() {

@@ -234,7 +234,7 @@
                             <input type="checkbox" name="" value="">
                         </th>
                         <th>
-                            ID
+                            用户ID
                         </th>
                         <th>
                             用户名
@@ -263,83 +263,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr th:each="user : ${users}">
+
                         <td>
-                            <input type="checkbox" value="1" name="">
+                            <input type="checkbox" th:value="${user.l_id}" name="">
                         </td>
+                        <td th:text="${user.l_id}"> </td>
                         <td>
-                            1
-                        </td>
-                        <td>
-                            <u style="cursor:pointer" onclick="member_show('张三','/Main/show','10001','360','400')">
-                                小明
+                            <u style="cursor:pointer" onclick="member_show('张三','/Main/show','10001','360','400')" th:text="${user.vc_name}">
                             </u>
                         </td>
-                        <td >
+                        <td th:if="${user.l_sex} eq 1" >
                             男
                         </td>
-                        <td >
-                            13000000000
+                        <td th:if="${user.l_sex} ne 1" >
+                            女
                         </td>
-                        <td >
-                            admin@mail.com
-                        </td>
-                        <td >
-                            北京市 海淀区
-                        </td>
-                        <td>
-                            2017-01-01 11:11:42
-                        </td>
-                        <td class="td-status">
-                            <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                已启用
-                            </span>
-                        </td>
-                        <td class="td-manage">
-                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
-                                <i class="layui-icon">&#xe601;</i>
-                            </a>
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-edit.html','4','','510')"
-                            class="ml-5" style="text-decoration:none">
-                                <i class="layui-icon">&#xe642;</i>
-                            </a>
-                            <a style="text-decoration:none"  onclick="member_password('修改密码','member-password.html','10001','600','400')"
-                            href="javascript:;" title="修改密码">
-                                <i class="layui-icon">&#xe631;</i>
-                            </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" 
-                            style="text-decoration:none">
-                                <i class="layui-icon">&#xe640;</i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" value="1" name="">
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
-                                小明
-                            </u>
-                        </td>
-                        <td >
-                            男
-                        </td>
-                        <td >
-                            13000000000
-                        </td>
-                        <td >
-                            admin@mail.com
-                        </td>
-                        <td >
-                            北京市 海淀区
-                        </td>
-                        <td>
-                            2017-01-01 11:11:42
-                        </td>
+                        <td th:text="${user.l_tel}"> </td>
+                        <td th:text="${user.vc_mail}"> </td>
+                        <td th:text="${user.vc_address}"> </td>
+                        <td th:text="${user.d_jrsj}"> </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
                                 已启用
